@@ -14,6 +14,9 @@ local configs = {
 		buffers = function()
 			return require("telescope.builtin").buffers()
 		end,
+        lsp_references = function()
+            return require("telescope.builtin").lsp_references()
+        end
 	},
     -- Belongs to telescope to me
     harpoon = {

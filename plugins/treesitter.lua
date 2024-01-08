@@ -67,9 +67,21 @@ local configs = {
 							["]l"] = { query = "@loop.outer", desc = "Next loop start" },
 							["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
 						},
+						goto_previous_start = {
+							["[f"] = { query = "@call.outer", desc = "Prev function call start" },
+							["[m"] = { query = "@function.outer", desc = "Prev method/function def start" },
+							["[c"] = { query = "@class.outer", desc = "Prev class start" },
+							["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
+							["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+						},
 					},
 				},
 			})
+			local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+			-- Repeat moves like with search (/) and n/N
+			vim.keymap.set({ "n", "x", "o" }, "n", ts_repeat_move.repeat_last_move)
+			vim.keymap.set({ "n", "x", "o" }, "b", ts_repeat_move.repeat_last_move_opposite)
 		end,
 	},
 }

@@ -3,6 +3,8 @@ local function set_opt(key, value)
     vim.opt[key] = value
 end
 
+vim.cmd("filetype plugin indent on")
+
 set_opt("laststatus", 3)
 set_opt("termguicolors", true)
 set_opt("autoindent", true)
@@ -37,4 +39,9 @@ set_opt("signcolumn", "yes")
 
 set_opt("list", true)
 vim.opt.listchars:append("eol:↴")
+
+vim.api.nvim_create_autocmd("FileType",{
+  pattern = {"tex", "lua", "cpp"},
+  command = [[ setlocal shiftwidth=2 softtabstop=2 expandtab ]]
+})
 
