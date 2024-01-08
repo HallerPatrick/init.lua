@@ -54,6 +54,6 @@ local display_dianostics = function()
     vim.diagnostic.open_float(0, { scope = "line" })
 end
 
-vim.keymap.set("n", "x", display_dianostics)
+vim.keymap.set("n", "<leader>x", display_dianostics)
 
 
