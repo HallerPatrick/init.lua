@@ -40,6 +40,8 @@ set_opt("signcolumn", "yes")
 set_opt("list", true)
 vim.opt.listchars:append("eol:↴")
 
+set_opt("shell", "/usr/bin/zsh")
+
 vim.api.nvim_create_autocmd("FileType",{
   pattern = {"tex", "lua", "cpp"},
   command = [[ setlocal shiftwidth=2 softtabstop=2 expandtab ]]
