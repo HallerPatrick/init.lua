@@ -6,6 +6,7 @@ local formmatter_configs = require("plugins.formatter")
 local neoscroll_configs = require("plugins.neoscroll")
 local comment_configs = require("plugins.comment")
 local ssh_config = require("plugins.ssh")
+local py_lsp_config = require("plugins.py_lsp")
 
 local plugins =  {
     {
@@ -32,7 +33,8 @@ local plugins =  {
     formmatter_configs,
     neoscroll_configs,
     comment_configs,
-    ssh_config
+    ssh_config,
+    py_lsp_config,
 }
 
 return plugins
