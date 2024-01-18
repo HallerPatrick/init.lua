@@ -2,11 +2,11 @@ local treesitter_configs = require("plugins.treesitter")
 local telescope_configs = require("plugins.telescope")
 local cmp_configs = require("plugins.cmp")
 local lsp_configs = require("plugins.lsp")
-local formmatter_configs = require("plugins.formatter")
 local neoscroll_configs = require("plugins.neoscroll")
 local comment_configs = require("plugins.comment")
 local ssh_config = require("plugins.ssh")
 local py_lsp_config = require("plugins.py_lsp")
+local git_config = require("plugins.git")
 
 local plugins =  {
     {
@@ -30,11 +30,11 @@ local plugins =  {
 	telescope_configs.harpoon,
 	cmp_configs,
 	lsp_configs,
-    formmatter_configs,
     neoscroll_configs,
     comment_configs,
     ssh_config,
     py_lsp_config,
+    git_config
 }
 
 return plugins

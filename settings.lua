@@ -8,6 +8,7 @@ vim.cmd("filetype plugin indent on")
 set_opt("laststatus", 3)
 set_opt("termguicolors", true)
 set_opt("autoindent", true)
+set_opt("smartindent", true)
 set_opt("timeoutlen", 300)
 set_opt("encoding", "utf-8")
 set_opt("scrolloff", 8)
@@ -46,4 +47,8 @@ vim.api.nvim_create_autocmd("FileType",{
   pattern = {"tex", "lua", "cpp"},
   command = [[ setlocal shiftwidth=2 softtabstop=2 expandtab ]]
 })
+
+vim.api.nvim_create_user_command("Format", function()
+    vim.lsp.buf.format()
+end, {})
 

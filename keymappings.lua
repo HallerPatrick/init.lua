@@ -1,9 +1,8 @@
-
 vim.g.mapleader = " "
 
 -- The phmaker basics
-vim.keymap.set({"n", "v"}, "H", "_")
-vim.keymap.set({"n", "v"}, "L", "$")
+vim.keymap.set({ "n", "v" }, "H", "_")
+vim.keymap.set({ "n", "v" }, "L", "$")
 
 -- Move with linebreaks
 vim.keymap.set("n", "j", "gj")
@@ -52,9 +51,7 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
 -- For diagnostics, that are to long to be displayed inline
 local display_dianostics = function()
-    vim.diagnostic.open_float(0, { scope = "line" })
+  vim.diagnostic.open_float(0, { scope = "line" })
 end
 
 vim.keymap.set("n", "<leader>x", display_dianostics)
-
-
