@@ -14,6 +14,7 @@ local cmp_setup = function()
 			{ name = "buffer" },
 			{ name = "path" },
 			{ name = "emoji" },
+			-- { name = "spell" },
 		}),
 		experimental = {
 			ghost_text = true,
@@ -40,6 +41,7 @@ local cmp_setup = function()
 					nvim_lua = "[Lua]",
 					path = "[Path]",
 					emoji = "[Emoji]",
+					spell = "[Spell]",
 				},
 			}),
 		},
@@ -71,6 +73,7 @@ local configs = {
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-emoji",
 	"lukas-reineke/cmp-rg",
+	"f3fora/cmp-spell",
 	{
 		"hrsh7th/nvim-cmp",
 		config = cmp_setup,

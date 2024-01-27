@@ -7,6 +7,7 @@ local neoscroll_configs = require("plugins.neoscroll")
 local comment_configs = require("plugins.comment")
 local ssh_config = require("plugins.ssh")
 local py_lsp_config = require("plugins.py_lsp")
+local iron_config = require("plugins.iron")
 
 local plugins =  {
     {
@@ -35,6 +36,7 @@ local plugins =  {
     comment_configs,
     ssh_config,
     py_lsp_config,
+    iron_config
 }
 
 return plugins

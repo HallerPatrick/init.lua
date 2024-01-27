@@ -26,13 +26,13 @@ local setup_lsp = function()
 						},
 					},
 				})
-
 				client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
 			end
 			return true
 		end,
 	})
 end
+
 
 local configs = {
 	{
@@ -59,6 +59,7 @@ local configs = {
 			require("copilot").setup({
 				suggestion = { enabled = true },
 				panel = { enabled = true },
+                filetypes = { markdown = true },
 			})
 		end,
 	},

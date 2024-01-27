@@ -36,11 +36,15 @@ set_opt("tabstop", 4)
 set_opt("cmdheight", 2)
 set_opt("updatetime", 300)
 set_opt("signcolumn", "yes")
+set_opt("swapfile", false)
+
+set_opt("spell", false)
+set_opt("spelllang", { 'en_us' })
 
 set_opt("list", true)
 vim.opt.listchars:append("eol:↴")
 
-set_opt("shell", "/usr/bin/zsh")
+set_opt("shell", "/bin/zsh")
 
 vim.api.nvim_create_autocmd("FileType",{
   pattern = {"tex", "lua", "cpp"},

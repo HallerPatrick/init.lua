@@ -1,5 +1,5 @@
 local config = {
-	"HallerPatrick/py_lsp.nvim",
+	dir = "~/Projects/py_lsp.nvim",
 	config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("py_lsp").setup({
