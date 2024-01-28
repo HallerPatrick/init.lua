@@ -8,6 +8,7 @@ local ssh_config = require("plugins.ssh")
 local py_lsp_config = require("plugins.py_lsp")
 local iron_config = require("plugins.iron")
 local git_config = require("plugins.git")
+local autopairs_config = require("plugins.autopairs")
 
 local plugins =  {
     {
@@ -36,7 +37,8 @@ local plugins =  {
     ssh_config,
     py_lsp_config,
     iron_config,
-    git_config
+    git_config,
+    autopairs_config
 }
 
 return plugins
