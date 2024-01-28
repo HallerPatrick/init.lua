@@ -5,7 +5,6 @@ local lsp_configs = require("plugins.lsp")
 local neoscroll_configs = require("plugins.neoscroll")
 local comment_configs = require("plugins.comment")
 local ssh_config = require("plugins.ssh")
-local py_lsp_config = require("plugins.py_lsp")
 local iron_config = require("plugins.iron")
 local git_config = require("plugins.git")
 local autopairs_config = require("plugins.autopairs")
@@ -35,7 +34,6 @@ local plugins =  {
     neoscroll_configs,
     comment_configs,
     ssh_config,
-    py_lsp_config,
     iron_config,
     git_config,
     autopairs_config
