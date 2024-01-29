@@ -62,24 +62,29 @@ vim.keymap.set("n", "<leader>x", display_dianostics)
 
 
 local function insert_breakpoint()
-    -- Check if the current buffer is a Python file
-    if vim.bo.filetype == 'python' then
-        -- Get the current line number and the current line text
-        local line_num = vim.api.nvim_win_get_cursor(0)[1]
-        local current_line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
+  -- Check if the current buffer is a Python file
+  if vim.bo.filetype == 'python' then
+    -- Get the current line number and the current line text
+    local line_num = vim.api.nvim_win_get_cursor(0)[1]
+    local current_line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
 
-        -- Extract the indentation of the current line
-        local indentation = current_line:match("^%s*")
-        
-        -- Prepare the breakpoint statement with the same indentation
-        local breakpoint_stmt = indentation .. "breakpoint()"
+    -- Extract the indentation of the current line
+    local indentation = current_line:match("^%s*")
 
-        -- Insert the breakpoint statement at the line after the current line
-        vim.api.nvim_buf_set_lines(0, line_num, line_num, false, {breakpoint_stmt})
-    else
-        print("Not a Python file")
-    end
+    -- Prepare the breakpoint statement with the same indentation
+    local breakpoint_stmt = indentation .. "breakpoint()"
+
+    -- Insert the breakpoint statement at the line after the current line
+    vim.api.nvim_buf_set_lines(0, line_num, line_num, false, { breakpoint_stmt })
+  else
+    print("Not a Python file")
+  end
 end
 
 vim.keymap.set('n', '<leader>bp', insert_breakpoint)
 
+vim.keymap.set('n', '<leader>da', ":RunScriptWithArgs ")
+vim.keymap.set('n', '<leader>do', function() require("dap").continue() end)
+vim.keymap.set('n', '<leader>db', function() require("dap").toggle_breakpoint() end)
+vim.keymap.set('n', '<leader>dn', function() require("dap").step_over() end)
+vim.keymap.set('n', '<leader>dt', function() require("dap").terminate() end)
