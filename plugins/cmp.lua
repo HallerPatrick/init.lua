@@ -14,6 +14,7 @@ local cmp_setup = function()
 			{ name = "buffer" },
 			{ name = "path" },
 			{ name = "emoji" },
+            { name = "dap" }
 			-- { name = "spell" },
 		}),
 		experimental = {
@@ -42,6 +43,7 @@ local cmp_setup = function()
 					path = "[Path]",
 					emoji = "[Emoji]",
 					spell = "[Spell]",
+                    dap = "[DAP]"
 				},
 			}),
 		},

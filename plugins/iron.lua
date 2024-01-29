@@ -1,8 +1,9 @@
 local config = {
 	"Vigemus/iron.nvim",
 	keys = {
-		{ "<leader>i", vim.cmd.IronRepl, desc = "Toggle REPL" },
+        { "<leader>i", vim.cmd.IronRepl, desc = "Toggle REPL" },
 		{ "<leader>I", vim.cmd.IronRestart, desc = "Restart REPL" },
+		{ "<leader>if", vim.cmd.IronFocus, desc = "Focus REPL buffer" },
 
 		-- these keymaps need no right-hand-side, since that is defined by the
 		-- plugin config further below

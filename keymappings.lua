@@ -44,6 +44,10 @@ vim.keymap.set("n", "<leader>hs", telescope.harpoon_actions.toggle_ui)
 vim.keymap.set("n", "<leader>hp", telescope.harpoon_actions.python_terminal)
 vim.keymap.set("n", "<leader>ht", telescope.harpoon_actions.goto_terminal)
 
+vim.keymap.set("n", "<leader>i", ":IronRepl<CR>")
+vim.keymap.set("n", "<leader>I", ":IronRestart<CR>")
+vim.keymap.set("n", "<leader>if", ":IronFocus<CR>")
+
 -- LSP keymappings
 vim.keymap.set("n", "gd", vim.lsp.buf.declaration)
 vim.keymap.set("n", "gD", require("utils").open_split_buffer_goto_definition)
