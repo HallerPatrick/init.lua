@@ -80,9 +80,8 @@ return {
               size = 1.0
             } },
             position = "bottom",
-            size = 10
+            size = 20
           } },
-
         })
       end
     },

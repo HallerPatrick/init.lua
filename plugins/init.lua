@@ -9,36 +9,23 @@ local iron_config = require("plugins.iron")
 local git_config = require("plugins.git")
 local autopairs_config = require("plugins.autopairs")
 local dap_config = require("plugins.dap")
+local others_config = require("plugins.others")
 
-local plugins =  {
-    {
-		"dracula/vim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			-- load the colorscheme here
-			vim.cmd([[colorscheme dracula]])
-		end,
-	},
-	{
-		"stevearc/oil.nvim",
-		config = function()
-			require("oil").setup({})
-		end,
-	},
-	treesitter_configs.treesitter,
-	treesitter_configs.treesitter_textobjects,
-	telescope_configs.telescope,
-	telescope_configs.harpoon,
-	cmp_configs,
-	lsp_configs,
-    neoscroll_configs,
-    comment_configs,
-    ssh_config,
-    iron_config,
-    git_config,
-    autopairs_config,
-    dap_config
+local plugins = {
+  others_config,
+  treesitter_configs.treesitter,
+  treesitter_configs.treesitter_textobjects,
+  telescope_configs.telescope,
+  telescope_configs.harpoon,
+  cmp_configs,
+  lsp_configs,
+  neoscroll_configs,
+  comment_configs,
+  ssh_config,
+  iron_config,
+  git_config,
+  autopairs_config,
+  dap_config
 }
 
 return plugins
