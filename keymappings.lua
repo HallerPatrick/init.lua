@@ -49,7 +49,7 @@ vim.keymap.set("n", "<leader>I", ":IronRestart<CR>")
 vim.keymap.set("n", "<leader>if", ":IronFocus<CR>")
 
 -- LSP keymappings
-vim.keymap.set("n", "gd", vim.lsp.buf.declaration)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gD", require("utils").open_split_buffer_goto_definition)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
@@ -77,7 +77,7 @@ local function insert_breakpoint()
     -- Insert the breakpoint statement at the line after the current line
     vim.api.nvim_buf_set_lines(0, line_num, line_num, false, { breakpoint_stmt })
   else
-    print("Not a Python file")
+    vim.print("Not a Python file")
   end
 end
 

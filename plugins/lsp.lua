@@ -31,6 +31,13 @@ local setup_lsp = function()
       return true
     end,
   })
+
+  lspconfig.dartls.setup({
+    capabilities = capabilities,
+  })
+  lspconfig.gopls.setup({
+    capabilities = capabilities,
+  })
 end
 
 

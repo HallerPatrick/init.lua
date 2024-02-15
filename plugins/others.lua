@@ -30,10 +30,33 @@ return {
           theme = 'dracula'
         },
         sections = {
-          lualine_y = { },
+          lualine_y = {},
           lualine_x = { "encoding", "filetype" },
         }
       }
     end
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("todo-comments").setup({})
+    end,
+  },
+  {
+    "kkoomen/vim-doge",
+    config = function()
+      vim.cmd(":call doge#install()")
+      vim.g.doge_mapping = "<Leader>d"
+      vim.g.doge_doc_standard_python = "google"
+    end
+  }
 }
