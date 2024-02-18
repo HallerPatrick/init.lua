@@ -46,5 +46,28 @@ return {
     lazy = false, -- or ft = 'typst'
     version = '0.1.*',
     build = function() require 'typst-preview'.update() end,
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("todo-comments").setup({})
+    end,
+  },
+  {
+    "kkoomen/vim-doge",
+    build = function()
+      vim.cmd(":call doge#install()")
+    end,
+    config = function()
+      vim.g.doge_mapping = "<Leader>d"
+      vim.g.doge_doc_standard_python = "google"
+    end
   }
 }

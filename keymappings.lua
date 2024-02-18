@@ -77,7 +77,7 @@ local function insert_breakpoint()
     -- Insert the breakpoint statement at the line after the current line
     vim.api.nvim_buf_set_lines(0, line_num, line_num, false, { breakpoint_stmt })
   else
-    print("Not a Python file")
+    vim.print("Not a Python file")
   end
 end
 

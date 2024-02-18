@@ -35,6 +35,12 @@ local setup_lsp = function()
   lspconfig.typst_lsp.setup({
     capabilities = capabilities,
   })
+  lspconfig.dartls.setup({
+    capabilities = capabilities,
+  })
+  lspconfig.gopls.setup({
+    capabilities = capabilities,
+  })
 end
 
 
