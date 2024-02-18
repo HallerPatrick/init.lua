@@ -25,7 +25,7 @@ function utils.open_split_buffer_goto_definition()
     -- Set buffer for new window
     vim.api.nvim_win_set_buf(target_win, current_buf)
 
-    -- Copy cursor position to new window for lsp defintion
+   -- Copy cursor position to new window for lsp defintion
     vim.api.nvim_win_set_cursor(target_win, current_cursor_pos)
 
     -- Focus new window

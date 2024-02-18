@@ -31,6 +31,10 @@ local setup_lsp = function()
       return true
     end,
   })
+
+  lspconfig.typst_lsp.setup({
+    capabilities = capabilities,
+  })
 end
 
 

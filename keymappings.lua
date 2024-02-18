@@ -49,7 +49,7 @@ vim.keymap.set("n", "<leader>I", ":IronRestart<CR>")
 vim.keymap.set("n", "<leader>if", ":IronFocus<CR>")
 
 -- LSP keymappings
-vim.keymap.set("n", "gd", vim.lsp.buf.declaration)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gD", require("utils").open_split_buffer_goto_definition)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
