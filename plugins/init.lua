@@ -25,7 +25,7 @@ local plugins = {
   iron_config,
   git_config,
   autopairs_config,
-  dap_config
+  -- dap_config
 }
 
 return plugins

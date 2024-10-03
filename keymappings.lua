@@ -38,6 +38,7 @@ vim.keymap.set("n", "<leader>f", telescope.telescope_actions.find_files)
 vim.keymap.set("n", "<leader>s", telescope.telescope_actions.live_grep)
 vim.keymap.set("n", "<leader>b", telescope.telescope_actions.buffers)
 vim.keymap.set("n", "<leader>fu", telescope.telescope_actions.lsp_references)
+vim.keymap.set("n", "<Tab>", telescope.telescope_actions.buffers)
 
 vim.keymap.set("n", "<leader>ha", telescope.harpoon_actions.add_file)
 vim.keymap.set("n", "<leader>hs", telescope.harpoon_actions.toggle_ui)

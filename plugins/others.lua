@@ -1,11 +1,22 @@
+
 return {
-  {
-    "dracula/vim",
+  -- {
+  --   "dracula/vim",
+  --   lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme dracula]])
+  --   end,
+  -- },
+  { 
+    "blazkowolf/gruber-darker.nvim",
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
-      vim.cmd([[colorscheme dracula]])
+      vim.cmd([[colorscheme gruber-darker]])
+      require("plugins.statusline").setup()
     end,
   },
   {
@@ -18,24 +29,31 @@ return {
   {
     "stevearc/oil.nvim",
     config = function()
-      require("oil").setup({})
+      require("oil").setup({
+        columns = {"size"},
+        watch_for_changes = true,
+        view_options = {
+          show_hidden = true,
+          winbar = "%!v:lua.get_oil_winbar()",
+        }
+      })
     end,
   },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup {
-        options = {
-          theme = 'dracula'
-        },
-        sections = {
-          lualine_y = {},
-          lualine_x = { "encoding", "filetype" },
-        }
-      }
-    end
-  },
+  -- {
+  --   'nvim-lualine/lualine.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   config = function()
+  --     require('lualine').setup {
+  --       options = {
+  --         theme = 'gruber-darker'
+  --       },
+  --       sections = {
+  --         lualine_y = {},
+  --         lualine_x = { "encoding", "filetype" },
+  --       }
+  --     }
+  --   end
+  -- },
   {
     'kaarmu/typst.vim',
     ft = 'typst',
