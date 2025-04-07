@@ -32,9 +32,9 @@ local setup_lsp = function()
     end,
   })
 
-  lspconfig.typst_lsp.setup({
-    capabilities = capabilities,
-  })
+  -- lspconfig.typst_lsp.setup({
+  --   capabilities = capabilities,
+  -- })
   lspconfig.dartls.setup({
     capabilities = capabilities,
   })
@@ -155,9 +155,10 @@ local configs = {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("py_lsp").setup({
         capabilities = capabilities,
-        default_venv_name = "venv",
+        -- default_venv_name = "ml",
+        default_venv_name = nil,
         language_server = "pyright",
-        source_strategies = { "default", "conda" },
+        source_strategies = { "default" },
         pylsp_plugins = {
           pycodestyle = {
             ignore = { "E501", "E503", "E203" },

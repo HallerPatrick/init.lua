@@ -64,8 +64,9 @@ return {
     lazy = false, -- or ft = 'typst'
     version = '0.1.*',
     build = function() require 'typst-preview'.update() end,
+  },
+  {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({})
@@ -87,5 +88,14 @@ return {
       vim.g.doge_mapping = "<Leader>d"
       vim.g.doge_doc_standard_python = "google"
     end
-  }
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 }
